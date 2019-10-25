@@ -18,7 +18,7 @@ style.css
  }
  .menu ul li {
     float: right;
-    line-height: 100px; 
+    line-height: 100 px 
 }
 .menu .judul{
     font-family: laksaman;
@@ -51,19 +51,3 @@ style.css
     height:20px;
     cursor:pointer;
 }
-@media screen and (max-width:720px){
-    .menu ul li {
-        float: none;
-        text-align: center;
-    }
-    .menu ul li a {
-        float:none;
-    }
-    .search, .menu .judul{
-        float: none;
-    }
-    .kotak{
-        float: none;
-        margin-top: 120px;
-        margin-left: -150px;
-    }
