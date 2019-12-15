@@ -48,7 +48,9 @@
     height:20px;
     cursor:pointer;
 }
-
+.justify{
+    text-align:justify;
+}
 @media screen and (max-width:720px){
     .menu ul li {
         float: none;

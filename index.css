@@ -64,6 +64,7 @@
 }
 .search{
     float:right;
+    
 }
 .text{
     cursor:pointer; 
@@ -78,15 +79,6 @@
 .slider {
         margin: 0 auto;
 }
-.button{
-    text-decoration: none;
-    color: black;
-    float: right;
-}
-.beritalainnya {
-    padding-left: 15px;
-    padding-right: 10px;
-    }
 
 
 @media screen and (max-width:720px){
@@ -96,6 +88,7 @@
     }
 .menu ul li a {
         float:none;
+
     }
 .search, .menu .judul, .tahun{
         float: none;
