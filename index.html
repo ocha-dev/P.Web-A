@@ -3,10 +3,8 @@
 <head>
 	<title>StudyTechno</title>
 	<link rel="stylesheet" type="text/css" href="index.css"></title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
-
 	<header>
 		<div class="menu">
 			<a  class="judul" h1>StudyTechno</a>
@@ -17,9 +15,8 @@
 			<ul>
 				<li><a href="hubungi kami.html">Hubungi Kami</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li><a href="learn.html">Learn</a></li>
-				<li><a href="event1.html">Events</a></li>
-				<li><a href="berita1.html">Berita</a></li>
+				<li><a href="login.html">Learn</a></li>
+				<li><a href="login.html">Events</a></li>
 				<li><a href="index.html">Utama</a></li>
 
 			</ul>
@@ -27,16 +24,16 @@
 	</header>
 	
         <div class="slider">
-        	<div class="upload">
-				<img src="#" id="preview" alt="masukkan dokumen"></p>
-				<input type="file" id="img" style="width:250px;height:150px;margin: 0px auto;">
-			</div>
+                <div class="slide"><img src="ok.jpg" style="opacity: 0.8;" alt=""/>
+                	<p class="isi">Perkembangan dunia Teknologi menuju 4.0</p>
+					<a href="berita2.html" class="menu-one">Baca</a>
+                </div>
         </div>
 
-	</div>
+	<br>
+	<br>
 		<div>
-		<table>
-		<tr >
+		<table class="beritalainnya">
 			<td><img src="teknologi.jpg"style="opacity: 0.8; float:right;width:90px; height: 90px;"></td>
 			<td >
 			<p ><a href="tonton.html"class="text">Tonton Berita-berita Teknologi Terbaru di Sini</a>
@@ -71,8 +68,11 @@
 			<p ><a href="tonton.html"class="text">Refrigeration & HVAC Indonesia Pamerkan Teknologi Pintar </a>
 			<p>25 Nov 201 Jakarta
 			</td>
-		<tr>
+		<tr>	
 		</table>	
+	</div>
+	<div>
+		<button id="beritalain" class="button">Berita Lainnya</a></button>
 	</div>
 	<footer>
 		<div style="margin-top: 100px; background-color: #008B8B;; text-align: center;">
@@ -80,21 +80,50 @@
 		</div>
 	</footer>
 
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+         $("#beritalain").click(function() {
+          
+    })
+
+    $(document).ready(function(){
+        console.log('doc ready');
+    })
+    $.getJSON('list-menu2.json',function(data){
+        console.log(data);
+        })
+
+    $("#beritalain").click(function(event){
+
+           
+            $.ajax({
+                url: "list-menu2.json",
+                type: 'GET',
+                dataType: 'json',
+            })
+            .done(function(hasil) {
+                    console.log("success");
+                    var gabung = "";
+                    $.each(hasil, function(index, val) {
+                        gabung += ` <td><img src="`+val.img+`"style="opacity: 0.8;float:right;width:90px; height: 90px;"></td>
+									<td >
+									<p ><a href="tonton.html"class="text">Google Tarik Gim Tentang Demonstrasi Hong Kong dari Play</a>
+									<p>27 Nov 201 Jakarta 
+									</td> `;
+						
+                    })
+					
+                    $(".beritalainnya").append(gabung);				
+                    
+            })
+            
+            .fail(function(){
+                console.log("eror");
+            })
+        })
+    })
+</script>
 </body>
 </html>
-<script>
-function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('#preview').attr('src', e.target.result);
-        }
-		reader.readAsDataURL(input.files[0]);
-    }
-}
-
-$("#img").change(function() {
-    readURL(this);
-});
-</script>

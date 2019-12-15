@@ -23,6 +23,3 @@ $(function() {
 		// $("#open_sideMenu").show();
 	});
 });
-
-
-

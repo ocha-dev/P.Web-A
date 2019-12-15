@@ -43,7 +43,7 @@ style.css
 }
 .search{
     float:right;
-    width:50 px;
+    width:50px;
 }
 
 .form1{		      	    
@@ -53,8 +53,6 @@ style.css
 .form2{		    
       	text-align: right;
         margin-top: -270px;	
-
-
 }
 @media screen and (max-width:720px){
     .menu ul li {
