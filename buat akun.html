@@ -17,149 +17,156 @@
 			<ul>
 				<li><a href="hubungi kami.html">Hubungi Kami</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li><a href="learn1.html">Learn</a></li>
-				<li><a href="event1.html">Events</a></li>
-				<li><a href="berita1.html">Berita</a></li>
+				<li><a href="login.html">Learn</a></li>
+				<li><a href="login.html">Events</a></li>
 				<li><a href="index.html">Utama</a></li>
 			</ul>
 		</div>
 	</header>
 		<div class="background">
 		<div class="kotak_login">
-		<form>
+		<form action="blog.html">
 			<h1 class="tulisan_login">Daftar</h1>
-			<form>
-			<label>Nama Depan:</label><br></br>
-			<input type="text" id="nama depan "name="Nama depan"class="form_login"  placeholder="masukan nama depan">
+
+			<form action="event1.html">
 			<br>
-			<br>
-			<label>Nama Belakang:</label><br></br>
-			<input type="text" id="nama belakang"name="Nama belakang"class="form_login"  placeholder="Nama Belakang">
-			<br>
-			<br>
-			<label>email/nomor ponsel:</label><br></br>
-			<input type="email" id="email" name="Nomor Ponsel atau email"class="form_login"  placeholder="Nomor Ponsel/email"> 
-			<br>
-			<br>
-			<label>password:</label><br></br>
-			<input type="password" id="password" name="Kata Sandi"class="form_login"  placeholder="Kata Sandi" >
-			<br>
-			<br>
-			<label>Copy password:</label><br></br>
-			<input type="password" id="copy password" name="Copy kata Sandi" class="form_login" placeholder="Copy Kata Sandi">
-			<br>
-			<br>
-			Tanggal lahir:<br>
-			<br>
-			<input type="number"  placeholder="tanggal"style="width: 50px;">/<input type="number"  placeholder="bulan"style="width: 50px;">/<input type="number"  placeholder="tahun"style="width: 50px;">
-			<br>
-			<br>
-			jenis kelamin <br>
-			<br>
-			<input type="radio" name="jk">Laki-laki
-			<input type="radio" name="jk">Perempuan<br>
-			<br>
-			<center>
-					<input type="submit" class="tombol_daftar" value="Daftar">
-			</center>			
-			<br>
+					<label>Nama lengkap:</label><br>
+					<input type="text" id="nama" class="form_login" name="nama" placeholder="Nama">
+					<br>
+					<br>
+					<label>Email:</label><br>
+					<input type="text" id="email" name="email"class="form_login"  placeholder="E-mail">
+					<br>
+					<br>
+					<label>Username:</label><br>
+					<input type="text" id="username" name="username"class="form_login"  placeholder="Username">
+					<br>
+					<br>
+					<label>Password/nomor telepon:</label><br>
+					<input type="password" id="password" name="password"class="form_login"  placeholder="Masukkan Password">
+					<br>
+					<br>
+					<label>tanggal lahir:</label><br>
+					<input type="number"class="form_login"  name="tanggal" placeholder="Tanggal Lahir">/
+					<input type="number"class="form_login"  name="Bulan" placeholder="Bulan Lahir">/
+					<input type="number" class="form_login" name="Tahun" placeholder="Tahun Lahir">
+					<br>
+					<br>
+					<label>jenis kelamin:</label><br>
+					<p><select class="form_login" name="gender">
+						<option>--Pilih Jenis Kelamin--</option>
+						<option>Laki-laki</option>
+						<option>Perempuan</option>
+					</select>
+					<br>
+					<button type="submit" id="login" value="submit"><a style="text-decoration: none; color: black;" href="event1.html">Daftar</a></button>
 			</br>
 			<center>
 			<a href="login.html" style="color: white">sudah punya akun?</a>
 			</center>
 		</form>
 		</div>
+
+		<div class="error" id="popup_error">
+			<div class="error_content">
+				<div class="error_top">
+					<h3>Warning !!!</h3>
+				</div>
+
+				<div class="error_middle">
+					<b></b>
+				</div>
+
+				<div class="error_bottom">
+					<button class="btn" id="close_error_form">Cancel</button>
+				</div>
+			</div>
+		</div>
+		
 	<footer>
 		<div style="margin-top: 100px; background-color: #008B8B;; text-align: center;">
 			Copyright 2019 | Ketentuan layanan | kebijakan Privasi 
 		</div>
 	</footer>
 
-	<script src="js/jquery-3.4.1.min.js"></script>
+
+<script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/top_menu.js"></script>
 <script type="text/javascript">
-//		<!-- fungsi alphabet -->
-	//	function Alphabet(nilai, pesan) {
-//		var alphaExp = /^[a-zA-Z]+$/;
-//			if(nilai.value.match(alphaExp)) {
-//				return true;
-//			}
-//			else {
-//				alert(pesan);
-//				nilai.focus();
-//				return false;
-//			}
-//	
-//		}
-//		<!-- fungsi Email  -->
-//		function cekEmail(nilai, pesan) {
-//			var email = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
-//			if(nilai.value.match(email)) {
-//				return true;
-//			}
-//			else {
-//				alert(pesan);
-//				nilai.focus();
-//				return false;
-//			}
-//		}
-//	   
-//		function validasi() {
-//			Alphabet(document.getElementById('Nama'), 'Tidak Boleh Kosong!!');
-//			cekEmail(document.getElementById('email'), 'Tidak Boleh Kosong!!');
-//		} 
+
+	function modalShow() {
+		$("#id_modal").show();
+		$("#id_modal").css('animation', 'show_modal');
+	}
+
+	function modalHide() {
+		$("#id_modal").css('animation', 'hide_modal');
+		setTimeout(function function_name() {
+			$("#id_modal").hide();
+		}, 300);
+	}
 
 	function show_error(pesan) {
-		$(".error").find('b').html(pesan);
-		$(".error").show();
-		$(".error").fadeOut(2000);
+		$("#popup_error").find('b').html(pesan);
+		setTimeout(function function_name(){
+			$("#popup_error").fadeIn('slow');
+		}, 300);
 	}
+		
+
+	$("#close_error_form").click(function(event) {
+		$("#popup_error").css('animation', 'hide_modal');
+		setTimeout(function function_name() {
+			$("#popup_error").fadeOut('slow');
+		}, 300);
+	});
+
+	window.onclick = function(event) {
+		var modal = document.getElementById('popup_error');
+		if(event.target == modal){
+			$("#popup_error").css('animation', 'hide_modal');
+			setTimeout(function function_name() {
+				$("#popup_error").hide();
+			}, 300);
+		}
+	};
+
+
+//validasi form
+
 
 	$('#login').on('click', function(event) {
 			event.preventDefault();
-			var nama depan  = $("input[name='nama depan ']").val();
-			var nama belakang = $("input[name='nama belakang']").val();
+			var nama = $("input[name='nama']").val();
 			var email = $("input[name='email']").val();
+			var username = $("input[name='username']").val();
 			var password = $("input[name='password']").val();
-			var copy password = $("input[name='copy password']").val();
 			var gender = $("select[name='gender']").val();
-		
+			var pendidikan = $("select[name='pendidikan']").val();
 
-			var namadepanAtur = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
+			var namaAtur = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
 			var angka = /^\d+$/; //angka saja
-
-			var namabelakangAtur = /^[a-zA-Z' ]+$/; //alfabet(besar atau kecil), petik ('), dan spasi saja
-			var angka = /^\d+$/; //angka saja
-
 			var emailAtur = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
-
 			
-			if (nama depan  == "" || nama belakang == "" || email == ""|| password == "" || copy password == "" || gender == "") {
-				show_error('Harap lengkapi data diri untuk melakukan pendaftaran');
+			if (nama == "" || email == "" || username == ""|| password == "" || gender == "" || pendidikan == "") {
+				show_error("Harap lengkapi data diri untuk melakukan pendaftaran");
 			}
-
-
-			else if (!namadepanAtur.test(nama depan)) {
-				show_error("Nama hanya boleh menggunakan huruf dan tanda petik");
+			else if (!namaAtur.test(nama)) {
+				show_error("Harap lengkapi data diri untuk melakukan pendaftaran");
 			}
-			else if (!namabelakangAtur.test(nama belakang)) {
-				show_error("Nama hanya boleh menggunakan huruf dan tanda petik");
-			}
-
 			else if (!emailAtur.test(email)) {
-				show_error("Email tidak sesuai")
+				show_error("Harap lengkapi data diri untuk melakukan pendaftaran");
+			}
+			else if (!namaAtur.test(username.length < 13)){
+				show_error("Harap lengkapi data diri untuk melakukan pendaftaran")
 			}
 			else if (password.length < 9) {
-				show_error("Password harus minimal 9 karakter");
-			}
-			else if (copy password.length < 9) {
-				show_error("Password harus minimal 9 karakter");
+				show_error("Harap lengkapi data diri untuk melakukan pendaftaran");
 			}
 			else{
 				$("#login").off('click').trigger('click');
 			}
 		});
 	</script>
-	
 </body>
 </html>
